@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Three and One Band | Live Cover Band — Jersey Shore &amp; Philadelphia</title>
+  <meta name="description" content="Three and One is a 4-piece cover band playing classic rock to pop hits. Available for weddings, bars, private events, and festivals across the Jersey Shore and Philadelphia area.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#hero" class="nav-logo"><span class="accent-text">Three</span> &amp; One</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#members">Band</a></li>
+        <li><a href="#media">Music</a></li>
+        <li><a href="#setlist">Setlist</a></li>
+        <li><a href="#shows">Shows</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact" class="btn btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.85rem;">Book Us</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+
+    <!-- Summer clip art decorations -->
+    <!-- Sun -->
+    <div class="hero-deco deco-sun" aria-hidden="true">
+      <svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="22" fill="#ffc63b"/><g stroke="#ffc63b" stroke-width="4" stroke-linecap="round"><line x1="50" y1="8" x2="50" y2="20"/><line x1="50" y1="80" x2="50" y2="92"/><line x1="8" y1="50" x2="20" y2="50"/><line x1="80" y1="50" x2="92" y2="50"/><line x1="20" y1="20" x2="29" y2="29"/><line x1="71" y1="71" x2="80" y2="80"/><line x1="80" y1="20" x2="71" y2="29"/><line x1="29" y1="71" x2="20" y2="80"/></g></svg>
+    </div>
+    <!-- Vinyl record -->
+    <div class="hero-deco deco-vinyl" aria-hidden="true">
+      <div class="vinyl-spin">
+        <svg viewBox="0 0 100 100" fill="none">
+          <circle cx="50" cy="50" r="45" fill="#1a1a2e"/>
+          <circle cx="50" cy="50" r="38" stroke="rgba(255,255,255,0.06)" stroke-width="1" fill="none"/>
+          <circle cx="50" cy="50" r="34" stroke="rgba(255,255,255,0.04)" stroke-width="0.5" fill="none"/>
+          <circle cx="50" cy="50" r="30" stroke="rgba(255,255,255,0.06)" stroke-width="1" fill="none"/>
+          <circle cx="50" cy="50" r="26" stroke="rgba(255,255,255,0.04)" stroke-width="0.5" fill="none"/>
+          <circle cx="50" cy="50" r="22" stroke="rgba(255,255,255,0.03)" stroke-width="0.5" fill="none"/>
+          <circle cx="50" cy="50" r="18" fill="#ffc63b"/>
+          <circle cx="50" cy="50" r="5" fill="#1a1a2e"/>
+          <!-- Gleam highlight -->
+          <ellipse cx="35" cy="35" rx="12" ry="4" fill="rgba(255,255,255,0.12)" transform="rotate(-45 35 35)"/>
+        </svg>
+      </div>
+      <!-- Tonearm (stays fixed) -->
+      <svg class="vinyl-needle" viewBox="0 0 50 60" fill="none">
+        <circle cx="40" cy="6" r="5" fill="#ffc63b"/>
+        <line x1="40" y1="10" x2="18" y2="48" stroke="#ffc63b" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="16" cy="50" r="3" fill="#ff65c3"/>
+      </svg>
+    </div>
+    <!-- Beach umbrella -->
+    <div class="hero-deco deco-umbrella" aria-hidden="true">
+      <img src="images/umbrella.png" alt="" width="100%">
+    </div>
+    <!-- Beach ball -->
+    <div class="hero-deco deco-beachball" aria-hidden="true">
+      <img src="images/beachball.png" alt="" width="100%">
+    </div>
+    <!-- Single note (yellow) -->
+    <div class="hero-deco deco-note1" aria-hidden="true">
+      <svg viewBox="0 0 60 80" fill="none"><ellipse cx="15" cy="65" rx="13" ry="10" fill="#ffc63b" transform="rotate(-15 15 65)"/><line x1="27" y1="60" x2="27" y2="10" stroke="#ffc63b" stroke-width="4"/><path d="M27 10 Q45 5 45 20 Q45 30 27 25" fill="#ffc63b"/></svg>
+    </div>
+    <!-- Double note (pink) -->
+    <div class="hero-deco deco-note2" aria-hidden="true">
+      <svg viewBox="0 0 80 80" fill="none"><ellipse cx="15" cy="65" rx="12" ry="9" fill="#ff65c3" transform="rotate(-15 15 65)"/><ellipse cx="55" cy="55" rx="12" ry="9" fill="#ff65c3" transform="rotate(-15 55 55)"/><line x1="26" y1="60" x2="26" y2="12" stroke="#ff65c3" stroke-width="4"/><line x1="66" y1="50" x2="66" y2="8" stroke="#ff65c3" stroke-width="4"/><line x1="26" y1="12" x2="66" y2="8" stroke="#ff65c3" stroke-width="4"/></svg>
+    </div>
+    <!-- Microphone -->
+    <div class="hero-deco deco-mic" aria-hidden="true">
+      <svg viewBox="0 0 60 120" fill="none"><rect x="18" y="5" width="24" height="45" rx="12" fill="#ffc63b"/><path d="M12 40 Q12 65 30 65 Q48 65 48 40" stroke="#ffc63b" stroke-width="4" fill="none" stroke-linecap="round"/><line x1="30" y1="65" x2="30" y2="95" stroke="#ffc63b" stroke-width="4" stroke-linecap="round"/><line x1="18" y1="95" x2="42" y2="95" stroke="#ffc63b" stroke-width="4" stroke-linecap="round"/></svg>
+    </div>
+    <!-- Small note (yellow) -->
+    <div class="hero-deco deco-note3" aria-hidden="true">
+      <svg viewBox="0 0 40 50" fill="none"><ellipse cx="12" cy="38" rx="10" ry="8" fill="#ffc63b" transform="rotate(-10 12 38)"/><line x1="21" y1="33" x2="21" y2="5" stroke="#ffc63b" stroke-width="3.5"/><path d="M21 5 Q35 2 35 12 Q35 18 21 15" fill="#ffc63b"/></svg>
+    </div>
+    <!-- Electric guitar -->
+    <div class="hero-deco deco-guitar" aria-hidden="true">
+      <img src="images/guitar.png" alt="" width="100%">
+    </div>
+    <!-- Drum -->
+    <div class="hero-deco deco-drum" aria-hidden="true">
+      <img src="images/drums.png" alt="" width="100%">
+    </div>
+    <!-- Sunglasses -->
+    <div class="hero-deco deco-shades" aria-hidden="true">
+      <svg viewBox="0 0 100 45" fill="none"><path d="M10 22 Q10 8 28 8 Q40 8 42 22 Q44 35 28 35 Q10 35 10 22Z" fill="#1a1a2e"/><path d="M58 22 Q58 8 72 8 Q90 8 90 22 Q90 35 72 35 Q58 35 58 22Z" fill="#1a1a2e"/><path d="M42 18 Q50 14 58 18" stroke="#1a1a2e" stroke-width="3" fill="none"/><line x1="10" y1="18" x2="2" y2="16" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/><line x1="90" y1="18" x2="98" y2="16" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/><path d="M14 15 Q18 12 30 12" stroke="#ffc63b" stroke-width="1.5" fill="none"/><path d="M62 15 Q66 12 78 12" stroke="#ffc63b" stroke-width="1.5" fill="none"/></svg>
+    </div>
+    <!-- Keyboard / piano keys -->
+    <div class="hero-deco deco-keys" aria-hidden="true">
+      <svg viewBox="0 0 120 60" fill="none"><rect x="5" y="5" width="110" height="50" rx="5" fill="#ffc63b" stroke="#d4a020" stroke-width="2"/><rect x="10" y="10" width="12" height="40" rx="2" fill="white" stroke="#ccc" stroke-width="1"/><rect x="24" y="10" width="12" height="40" rx="2" fill="white" stroke="#ccc" stroke-width="1"/><rect x="38" y="10" width="12" height="40" rx="2" fill="white" stroke="#ccc" stroke-width="1"/><rect x="52" y="10" width="12" height="40" rx="2" fill="white" stroke="#ccc" stroke-width="1"/><rect x="66" y="10" width="12" height="40" rx="2" fill="white" stroke="#ccc" stroke-width="1"/><rect x="80" y="10" width="12" height="40" rx="2" fill="white" stroke="#ccc" stroke-width="1"/><rect x="94" y="10" width="12" height="40" rx="2" fill="white" stroke="#ccc" stroke-width="1"/><rect x="19" y="10" width="8" height="25" rx="1" fill="#1a1a2e"/><rect x="33" y="10" width="8" height="25" rx="1" fill="#1a1a2e"/><rect x="61" y="10" width="8" height="25" rx="1" fill="#1a1a2e"/><rect x="75" y="10" width="8" height="25" rx="1" fill="#1a1a2e"/><rect x="89" y="10" width="8" height="25" rx="1" fill="#1a1a2e"/></svg>
+    </div>
+    <!-- Headphones -->
+    <div class="hero-deco deco-headphones" aria-hidden="true">
+      <img src="images/headphones.png" alt="" width="100%">
+    </div>
+    <!-- Star sparkle 1 -->
+    <div class="hero-deco deco-star1" aria-hidden="true">
+      <svg viewBox="0 0 40 40" fill="none"><path d="M20 2 L23 15 L38 20 L23 25 L20 38 L17 25 L2 20 L17 15 Z" fill="#ffc63b"/></svg>
+    </div>
+    <!-- Star sparkle 2 -->
+    <div class="hero-deco deco-star2" aria-hidden="true">
+      <svg viewBox="0 0 40 40" fill="none"><path d="M20 2 L23 15 L38 20 L23 25 L20 38 L17 25 L2 20 L17 15 Z" fill="#ff65c3"/></svg>
+    </div>
+    <!-- Star sparkle 3 -->
+    <div class="hero-deco deco-star3" aria-hidden="true">
+      <svg viewBox="0 0 40 40" fill="none"><path d="M20 2 L23 15 L38 20 L23 25 L20 38 L17 25 L2 20 L17 15 Z" fill="#ffc63b"/></svg>
+    </div>
+    <!-- Star sparkle 4 -->
+    <div class="hero-deco deco-star4" aria-hidden="true">
+      <svg viewBox="0 0 40 40" fill="none"><path d="M20 5 L22 16 L33 20 L22 24 L20 35 L18 24 L7 20 L18 16 Z" fill="#ff65c3"/></svg>
+    </div>
+    <!-- Waves -->
+    <div class="hero-deco deco-wave" aria-hidden="true">
+      <svg viewBox="0 0 200 50" fill="none"><path d="M0 25 Q25 5 50 25 Q75 45 100 25 Q125 5 150 25 Q175 45 200 25" stroke="#ffc63b" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M0 38 Q25 18 50 38 Q75 58 100 38 Q125 18 150 38 Q175 58 200 38" stroke="#ff65c3" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+    </div>
+    <!-- Tambourine -->
+    <div class="hero-deco deco-tamb" aria-hidden="true">
+      <svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="32" fill="none" stroke="#ffc63b" stroke-width="6"/><circle cx="40" cy="40" r="18" fill="none" stroke="#ffc63b" stroke-width="1.5"/><circle cx="40" cy="8" r="5" fill="#ff65c3"/><circle cx="40" cy="72" r="5" fill="#ff65c3"/><circle cx="8" cy="40" r="5" fill="#ff65c3"/><circle cx="72" cy="40" r="5" fill="#ff65c3"/><circle cx="17" cy="17" r="4" fill="#ff65c3"/><circle cx="63" cy="63" r="4" fill="#ff65c3"/></svg>
+    </div>
+    <!-- Surfboard -->
+    <div class="hero-deco deco-surfboard" aria-hidden="true">
+      <svg viewBox="0 0 30 120" fill="none"><path d="M15 5 Q0 25 3 60 Q5 95 15 115 Q25 95 27 60 Q30 25 15 5Z" fill="#ff65c3"/><line x1="15" y1="15" x2="15" y2="105" stroke="#ffc63b" stroke-width="2"/><path d="M8 45 Q15 40 22 45" stroke="#ffc63b" stroke-width="1.5" fill="none"/><path d="M8 65 Q15 60 22 65" stroke="#ffc63b" stroke-width="1.5" fill="none"/></svg>
+    </div>
+    <!-- Extra stars -->
+    <div class="hero-deco deco-star5" aria-hidden="true">
+      <svg viewBox="0 0 40 40" fill="none"><path d="M20 2 L23 15 L38 20 L23 25 L20 38 L17 25 L2 20 L17 15 Z" fill="#ffc63b"/></svg>
+    </div>
+    <div class="hero-deco deco-star6" aria-hidden="true">
+      <svg viewBox="0 0 40 40" fill="none"><path d="M20 2 L23 15 L38 20 L23 25 L20 38 L17 25 L2 20 L17 15 Z" fill="#ff65c3"/></svg>
+    </div>
+    <div class="hero-deco deco-star7" aria-hidden="true">
+      <svg viewBox="0 0 40 40" fill="none"><path d="M20 5 L22 16 L33 20 L22 24 L20 35 L18 24 L7 20 L18 16 Z" fill="#ffc63b"/></svg>
+    </div>
+    <div class="hero-deco deco-star8" aria-hidden="true">
+      <svg viewBox="0 0 40 40" fill="none"><path d="M20 2 L23 15 L38 20 L23 25 L20 38 L17 25 L2 20 L17 15 Z" fill="#ff65c3"/></svg>
+    </div>
+    <!-- Extra notes -->
+    <div class="hero-deco deco-note4" aria-hidden="true">
+      <svg viewBox="0 0 60 80" fill="none"><ellipse cx="15" cy="65" rx="13" ry="10" fill="#ff65c3" transform="rotate(-15 15 65)"/><line x1="27" y1="60" x2="27" y2="10" stroke="#ff65c3" stroke-width="4"/><path d="M27 10 Q45 5 45 20 Q45 30 27 25" fill="#ff65c3"/></svg>
+    </div>
+    <div class="hero-deco deco-note5" aria-hidden="true">
+      <svg viewBox="0 0 80 80" fill="none"><ellipse cx="15" cy="65" rx="12" ry="9" fill="#ffc63b" transform="rotate(-15 15 65)"/><ellipse cx="55" cy="55" rx="12" ry="9" fill="#ffc63b" transform="rotate(-15 55 55)"/><line x1="26" y1="60" x2="26" y2="12" stroke="#ffc63b" stroke-width="4"/><line x1="66" y1="50" x2="66" y2="8" stroke="#ffc63b" stroke-width="4"/><line x1="26" y1="12" x2="66" y2="8" stroke="#ffc63b" stroke-width="4"/></svg>
+    </div>
+    <div class="hero-deco deco-note6" aria-hidden="true">
+      <svg viewBox="0 0 40 50" fill="none"><ellipse cx="12" cy="38" rx="10" ry="8" fill="#ff65c3" transform="rotate(-10 12 38)"/><line x1="21" y1="33" x2="21" y2="5" stroke="#ff65c3" stroke-width="3.5"/><path d="M21 5 Q35 2 35 12 Q35 18 21 15" fill="#ff65c3"/></svg>
+    </div>
+    <!-- Single note yellow -->
+    <div class="hero-deco deco-note7" aria-hidden="true">
+      <svg viewBox="0 0 60 80" fill="none"><ellipse cx="15" cy="65" rx="13" ry="10" fill="#ffc63b" transform="rotate(-15 15 65)"/><line x1="27" y1="60" x2="27" y2="10" stroke="#ffc63b" stroke-width="4"/><path d="M27 10 Q45 5 45 20 Q45 30 27 25" fill="#ffc63b"/></svg>
+    </div>
+    <!-- Double note pink -->
+    <div class="hero-deco deco-note8" aria-hidden="true">
+      <svg viewBox="0 0 80 80" fill="none"><ellipse cx="15" cy="65" rx="12" ry="9" fill="#ff65c3" transform="rotate(-15 15 65)"/><ellipse cx="55" cy="55" rx="12" ry="9" fill="#ff65c3" transform="rotate(-15 55 55)"/><line x1="26" y1="60" x2="26" y2="12" stroke="#ff65c3" stroke-width="4"/><line x1="66" y1="50" x2="66" y2="8" stroke="#ff65c3" stroke-width="4"/><line x1="26" y1="12" x2="66" y2="8" stroke="#ff65c3" stroke-width="4"/></svg>
+    </div>
+    <!-- Small note pink -->
+    <div class="hero-deco deco-note9" aria-hidden="true">
+      <svg viewBox="0 0 40 50" fill="none"><ellipse cx="12" cy="38" rx="10" ry="8" fill="#ff65c3" transform="rotate(-10 12 38)"/><line x1="21" y1="33" x2="21" y2="5" stroke="#ff65c3" stroke-width="3.5"/><path d="M21 5 Q35 2 35 12 Q35 18 21 15" fill="#ff65c3"/></svg>
+    </div>
+    <!-- Single note pink -->
+    <div class="hero-deco deco-note10" aria-hidden="true">
+      <svg viewBox="0 0 60 80" fill="none"><ellipse cx="15" cy="65" rx="13" ry="10" fill="#ff65c3" transform="rotate(-15 15 65)"/><line x1="27" y1="60" x2="27" y2="10" stroke="#ff65c3" stroke-width="4"/><path d="M27 10 Q45 5 45 20 Q45 30 27 25" fill="#ff65c3"/></svg>
+    </div>
+    <!-- Double note yellow -->
+    <div class="hero-deco deco-note11" aria-hidden="true">
+      <svg viewBox="0 0 80 80" fill="none"><ellipse cx="15" cy="65" rx="12" ry="9" fill="#ffc63b" transform="rotate(-15 15 65)"/><ellipse cx="55" cy="55" rx="12" ry="9" fill="#ffc63b" transform="rotate(-15 55 55)"/><line x1="26" y1="60" x2="26" y2="12" stroke="#ffc63b" stroke-width="4"/><line x1="66" y1="50" x2="66" y2="8" stroke="#ffc63b" stroke-width="4"/><line x1="26" y1="12" x2="66" y2="8" stroke="#ffc63b" stroke-width="4"/></svg>
+    </div>
+
+    <div class="hero-content">
+      <h1 class="fade-in"><span class="accent-text">Three</span> &amp; One</h1>
+      <p class="tagline fade-in fade-in-delay-1">
+        <!-- [TAGLINE] Replace with your band's tagline -->
+        Four musicians. One unforgettable night. Classic rock to today's hits — live from the Jersey Shore.
+      </p>
+      <div class="hero-cta fade-in fade-in-delay-2">
+        <a href="#contact" class="btn btn-primary">Book Us For Your Event</a>
+        <a href="#media" class="btn btn-outline">Hear Us Play</a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 5v14M19 12l-7 7-7-7"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT ==================== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>About <span class="accent-text">The Band</span></h2>
+        <div class="accent-line"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-image fade-in">
+          <!-- [GROUP PHOTO] Replace placeholder with: <img src="images/band-group.jpg" alt="Three and One band group photo"> -->
+          <div class="placeholder">[ Group Photo ]</div>
+        </div>
+        <div class="about-text fade-in fade-in-delay-1">
+          <h3>Your Night, Our Sound</h3>
+          <!-- [BAND DESCRIPTION] Replace with your actual band description -->
+          <p>Three and One is a high-energy 4-piece cover band based out of the Jersey Shore and Philadelphia area. We bring the party to every stage — from intimate bar gigs to weddings, corporate events, and outdoor festivals.</p>
+          <p>Our setlist spans decades of crowd favorites — from classic rock anthems and blues grooves to modern pop and party hits. We don't just play songs; we create an experience that gets people out of their seats and onto the dance floor.</p>
+          <div class="about-stats">
+            <div class="stat">
+              <div class="stat-number">100+</div>
+              <div class="stat-label">Shows Played</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">4</div>
+              <div class="stat-label">Members</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">75+</div>
+              <div class="stat-label">Songs</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== BAND MEMBERS ==================== -->
+  <section class="members" id="members">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>Meet <span class="accent-text">The Band</span></h2>
+        <div class="accent-line"></div>
+        <p>Four players, one sound — get to know who's on stage.</p>
+      </div>
+      <div class="members-grid">
+        <!-- Gus -->
+        <div class="member-card fade-in">
+          <div class="member-photo">
+            <img src="images/headshots/Gus_Headshot.JPG" alt="Gus" style="object-position: 40% top;">
+          </div>
+          <div class="member-info">
+            <h3>Gus</h3>
+            <div class="member-role">Lead Vocals / Guitar</div>
+            <p class="member-bio">[Bio coming soon.]</p>
+          </div>
+        </div>
+        <!-- Finn -->
+        <div class="member-card fade-in fade-in-delay-1">
+          <div class="member-photo">
+            <img src="images/headshots/Finn_Headshot.JPG" alt="Finn" style="object-position: 25% top; transform: scale(1.1);">
+          </div>
+          <div class="member-info">
+            <h3>Finn</h3>
+            <div class="member-role">Keys / Bass / Backing Vocals</div>
+            <p class="member-bio">[Bio coming soon.]</p>
+          </div>
+        </div>
+        <!-- Cosmo -->
+        <div class="member-card fade-in fade-in-delay-2">
+          <div class="member-photo">
+            <img src="images/headshots/Cosmo_Headshot.JPG" alt="Cosmo">
+          </div>
+          <div class="member-info">
+            <h3>Cosmo</h3>
+            <div class="member-role">Bass / Guitar / Backing Vocals</div>
+            <p class="member-bio">[Bio coming soon.]</p>
+          </div>
+        </div>
+        <!-- Neil -->
+        <div class="member-card fade-in fade-in-delay-3">
+          <div class="member-photo">
+            <img src="images/headshots/Neil_Headshot.JPG" alt="Neil">
+          </div>
+          <div class="member-info">
+            <h3>Neil</h3>
+            <div class="member-role">Drums</div>
+            <p class="member-bio">[Bio coming soon.]</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== MUSIC / MEDIA ==================== -->
+  <section class="media" id="media">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>Hear <span class="accent-text">Us Play</span></h2>
+        <div class="accent-line"></div>
+        <p>Check out our live performances and studio tracks.</p>
+      </div>
+      <div class="media-grid">
+        <div class="media-card fade-in">
+          <h3>2026 Showcase</h3>
+          <div class="embed-wrapper">
+            <a href="https://www.youtube.com/watch?v=o-eYC7b1l8I" target="_blank" rel="noopener noreferrer" class="video-thumbnail-link">
+              <img src="https://img.youtube.com/vi/o-eYC7b1l8I/hqdefault.jpg" alt="Three and One 2026 showcase" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+              <div class="play-btn-overlay">
+                <svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.63-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24L27 14v20" fill="white"/></svg>
+              </div>
+              <div class="watch-on-yt">Watch on YouTube</div>
+            </a>
+          </div>
+        </div>
+        <div class="media-card fade-in fade-in-delay-1">
+          <h3>2024 Showcase</h3>
+          <div class="embed-wrapper">
+            <a href="https://www.youtube.com/watch?v=NZrFxZ2w37o" target="_blank" rel="noopener noreferrer" class="video-thumbnail-link">
+              <img src="https://img.youtube.com/vi/NZrFxZ2w37o/hqdefault.jpg" alt="Three and One 2024 showcase" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+              <div class="play-btn-overlay">
+                <svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.63-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24L27 14v20" fill="white"/></svg>
+              </div>
+              <div class="watch-on-yt">Watch on YouTube</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SETLIST ==================== -->
+  <section class="setlist" id="setlist">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>Our <span class="accent-text">Setlist</span></h2>
+        <div class="accent-line"></div>
+        <p>A taste of what we play — and we're always adding more.</p>
+      </div>
+      <div class="setlist-grid">
+        <div class="setlist-category fade-in">
+          <h3>Classic Rock</h3>
+          <ul>
+            <li>Sweet Home Alabama <span class="song-artist">Lynyrd Skynyrd</span></li>
+            <li>American Girl <span class="song-artist">Tom Petty</span></li>
+            <li>Rosalita (Come Out Tonight) <span class="song-artist">Bruce Springsteen</span></li>
+            <li>Black Dog <span class="song-artist">Led Zeppelin</span></li>
+            <li>Jump <span class="song-artist">Van Halen</span></li>
+            <li>Johnny B. Goode <span class="song-artist">Chuck Berry</span></li>
+            <li>Whipping Post <span class="song-artist">Allman Brothers Band</span></li>
+          </ul>
+        </div>
+        <div class="setlist-category fade-in fade-in-delay-1">
+          <h3>Pop &amp; Feel-Good Hits</h3>
+          <ul>
+            <li>Treasure <span class="song-artist">Bruno Mars</span></li>
+            <li>Take On Me <span class="song-artist">A-Ha</span></li>
+            <li>Accidentally in Love <span class="song-artist">Counting Crows</span></li>
+            <li>Escape (Pina Colada) <span class="song-artist">Rupert Holmes</span></li>
+            <li>Drops of Jupiter <span class="song-artist">Train</span></li>
+            <li>I'm a Believer <span class="song-artist">Smash Mouth</span></li>
+            <li>Dancing in the Moonlight <span class="song-artist">King Harvest</span></li>
+          </ul>
+        </div>
+        <div class="setlist-category fade-in fade-in-delay-2">
+          <h3>Prog &amp; Grooves</h3>
+          <ul>
+            <li>Tom Sawyer <span class="song-artist">Rush</span></li>
+            <li>Limelight <span class="song-artist">Rush</span></li>
+            <li>Roundabout <span class="song-artist">Yes</span></li>
+            <li>Sledgehammer <span class="song-artist">Peter Gabriel</span></li>
+            <li>Virtual Insanity <span class="song-artist">Jamiroquai</span></li>
+            <li>Fly Like an Eagle <span class="song-artist">Steve Miller Band</span></li>
+            <li>Just the Two of Us <span class="song-artist">Grover Washington Jr</span></li>
+          </ul>
+        </div>
+        <div class="setlist-category fade-in fade-in-delay-3">
+          <h3>Modern &amp; Alternative</h3>
+          <ul>
+            <li>Dark Necessities <span class="song-artist">Red Hot Chili Peppers</span></li>
+            <li>Take Me Out <span class="song-artist">Franz Ferdinand</span></li>
+            <li>Sex on Fire <span class="song-artist">Kings of Leon</span></li>
+            <li>Just Like Heaven <span class="song-artist">The Cure</span></li>
+            <li>One Big Holiday <span class="song-artist">My Morning Jacket</span></li>
+            <li>Everybody Wants to Rule the World <span class="song-artist">Tears for Fears</span></li>
+            <li>Don't Stop Me Now <span class="song-artist">Queen</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== UPCOMING SHOWS ==================== -->
+  <section class="shows" id="shows">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>Upcoming <span class="accent-text">Shows</span></h2>
+        <div class="accent-line"></div>
+        <p>Come see us live — check out where we're playing next.</p>
+      </div>
+      <div class="shows-list">
+        <div class="show-card fade-in" data-date="2026-05-16">
+          <div class="show-date"><div class="show-month">May</div><div class="show-day">16</div></div>
+          <div class="show-divider"></div>
+          <div class="show-details"><h3>Lazy Bass Bayside Bar &amp; Grill — North Wildwood, NJ</h3><div class="show-time">5:00 PM — 9:00 PM</div></div>
+        </div>
+        <div class="show-card fade-in" data-date="2026-05-22">
+          <div class="show-date"><div class="show-month">May</div><div class="show-day">22</div></div>
+          <div class="show-divider"></div>
+          <div class="show-details"><h3>Gully's — Avalon, NJ</h3><div class="show-time">TBD</div></div>
+        </div>
+        <div class="show-card fade-in" data-date="2026-06-13">
+          <div class="show-date"><div class="show-month">Jun</div><div class="show-day">13</div></div>
+          <div class="show-divider"></div>
+          <div class="show-details"><h3>Lazy Bass Bayside Bar &amp; Grill — North Wildwood, NJ</h3><div class="show-time">5:00 PM — 9:00 PM</div></div>
+        </div>
+        <div class="show-card fade-in" data-date="2026-06-14">
+          <div class="show-date"><div class="show-month">Jun</div><div class="show-day">14</div></div>
+          <div class="show-divider"></div>
+          <div class="show-details"><h3>Lost Buoy</h3><div class="show-time">TBD</div></div>
+        </div>
+        <div class="show-card fade-in" data-date="2026-06-18">
+          <div class="show-date"><div class="show-month">Jun</div><div class="show-day">18</div></div>
+          <div class="show-divider"></div>
+          <div class="show-details"><h3>Horsham Concert Series</h3><div class="show-time">TBD</div></div>
+        </div>
+        <div class="show-card fade-in" data-date="2026-06-19">
+          <div class="show-date"><div class="show-month">Jun</div><div class="show-day">19</div></div>
+          <div class="show-divider"></div>
+          <div class="show-details"><h3>Gully's — Avalon, NJ</h3><div class="show-time">TBD</div></div>
+        </div>
+        <div class="show-card fade-in" data-date="2026-06-21">
+          <div class="show-date"><div class="show-month">Jun</div><div class="show-day">21</div></div>
+          <div class="show-divider"></div>
+          <div class="show-details"><h3>Lazy Bass Bayside Bar &amp; Grill — North Wildwood, NJ</h3><div class="show-time">5:00 PM — 9:00 PM</div></div>
+        </div>
+        <div class="show-card fade-in" data-date="2026-07-03">
+          <div class="show-date"><div class="show-month">Jul</div><div class="show-day">3</div></div>
+          <div class="show-divider"></div>
+          <div class="show-details"><h3>Lazy Bass Bayside Bar &amp; Grill — North Wildwood, NJ</h3><div class="show-time">5:00 PM — 9:00 PM</div></div>
+        </div>
+        <div class="show-card fade-in" data-date="2026-07-05">
+          <div class="show-date"><div class="show-month">Jul</div><div class="show-day">5</div></div>
+          <div class="show-divider"></div>
+          <div class="show-details"><h3>Lost Buoy</h3><div class="show-time">TBD</div></div>
+        </div>
+        <div class="show-card fade-in" data-date="2026-07-10">
+          <div class="show-date"><div class="show-month">Jul</div><div class="show-day">10</div></div>
+          <div class="show-divider"></div>
+          <div class="show-details"><h3>Gully's — Avalon, NJ</h3><div class="show-time">TBD</div></div>
+        </div>
+        <div class="show-card fade-in" data-date="2026-07-11">
+          <div class="show-date"><div class="show-month">Jul</div><div class="show-day">11</div></div>
+          <div class="show-divider"></div>
+          <div class="show-details"><h3>Lazy Bass Bayside Bar &amp; Grill — North Wildwood, NJ</h3><div class="show-time">5:00 PM — 9:00 PM</div></div>
+        </div>
+        <div class="show-card fade-in" data-date="2026-07-17">
+          <div class="show-date"><div class="show-month">Jul</div><div class="show-day">17</div></div>
+          <div class="show-divider"></div>
+          <div class="show-details"><h3>Gully's — Avalon, NJ</h3><div class="show-time">TBD</div></div>
+        </div>
+        <div class="show-card fade-in" data-date="2026-07-18">
+          <div class="show-date"><div class="show-month">Jul</div><div class="show-day">18</div></div>
+          <div class="show-divider"></div>
+          <div class="show-details"><h3>Lost Buoy</h3><div class="show-time">TBD</div></div>
+        </div>
+        <div class="show-card fade-in" data-date="2026-07-19">
+          <div class="show-date"><div class="show-month">Jul</div><div class="show-day">19</div></div>
+          <div class="show-divider"></div>
+          <div class="show-details"><h3>Lazy Bass Bayside Bar &amp; Grill — North Wildwood, NJ</h3><div class="show-time">5:00 PM — 9:00 PM</div></div>
+        </div>
+        <div class="show-card fade-in" data-date="2026-07-21">
+          <div class="show-date"><div class="show-month">Jul</div><div class="show-day">21</div></div>
+          <div class="show-divider"></div>
+          <div class="show-details"><h3>Tuesdays at the Tower</h3><div class="show-time">TBD</div></div>
+        </div>
+        <div class="show-card fade-in" data-date="2026-07-24">
+          <div class="show-date"><div class="show-month">Jul</div><div class="show-day">24</div></div>
+          <div class="show-divider"></div>
+          <div class="show-details"><h3>Lazy Bass Bayside Bar &amp; Grill — North Wildwood, NJ</h3><div class="show-time">5:00 PM — 9:00 PM</div></div>
+        </div>
+        <div class="show-card fade-in" data-date="2026-07-31">
+          <div class="show-date"><div class="show-month">Jul</div><div class="show-day">31</div></div>
+          <div class="show-divider"></div>
+          <div class="show-details"><h3>Gully's — Avalon, NJ</h3><div class="show-time">TBD</div></div>
+        </div>
+        <div class="show-card fade-in" data-date="2026-08-01">
+          <div class="show-date"><div class="show-month">Aug</div><div class="show-day">1</div></div>
+          <div class="show-divider"></div>
+          <div class="show-details"><h3>Lazy Bass Bayside Bar &amp; Grill — North Wildwood, NJ</h3><div class="show-time">5:00 PM — 9:00 PM</div></div>
+        </div>
+        <div class="show-card fade-in" data-date="2026-08-02">
+          <div class="show-date"><div class="show-month">Aug</div><div class="show-day">2</div></div>
+          <div class="show-divider"></div>
+          <div class="show-details"><h3>Lost Buoy</h3><div class="show-time">TBD</div></div>
+        </div>
+        <div class="show-card fade-in">
+          <div class="show-date"><div class="show-month">Aug</div><div class="show-day">7</div></div>
+          <div class="show-divider"></div>
+          <div class="show-details"><h3>Gully's — Avalon, NJ</h3><div class="show-time">TBD</div></div>
+        </div>
+        <div class="show-card fade-in" data-date="2026-08-08">
+          <div class="show-date"><div class="show-month">Aug</div><div class="show-day">8</div></div>
+          <div class="show-divider"></div>
+          <div class="show-details"><h3>Lazy Bass Bayside Bar &amp; Grill — North Wildwood, NJ</h3><div class="show-time">5:00 PM — 9:00 PM</div></div>
+        </div>
+        <div class="show-card fade-in" data-date="2026-08-14">
+          <div class="show-date"><div class="show-month">Aug</div><div class="show-day">14</div></div>
+          <div class="show-divider"></div>
+          <div class="show-details"><h3>Gully's — Avalon, NJ</h3><div class="show-time">TBD</div></div>
+        </div>
+        <div class="show-card fade-in" data-date="2026-08-16">
+          <div class="show-date"><div class="show-month">Aug</div><div class="show-day">16</div></div>
+          <div class="show-divider"></div>
+          <div class="show-details"><h3>Lazy Bass Bayside Bar &amp; Grill — North Wildwood, NJ</h3><div class="show-time">5:00 PM — 9:00 PM</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== GALLERY ==================== -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>Photo <span class="accent-text">Gallery</span></h2>
+        <div class="accent-line"></div>
+        <p>On stage, backstage, and everything in between.</p>
+      </div>
+      <!-- [GALLERY PHOTOS] Replace placeholders with real images:
+           <img src="images/gallery-1.jpg" alt="Description"> -->
+      <div class="gallery-grid">
+        <div class="gallery-item fade-in" data-index="0">
+          <div class="placeholder">[ Gallery Photo 1 ]</div>
+        </div>
+        <div class="gallery-item fade-in fade-in-delay-1" data-index="1">
+          <div class="placeholder">[ Gallery Photo 2 ]</div>
+        </div>
+        <div class="gallery-item fade-in fade-in-delay-2" data-index="2">
+          <div class="placeholder">[ Gallery Photo 3 ]</div>
+        </div>
+        <div class="gallery-item fade-in" data-index="3">
+          <div class="placeholder">[ Gallery Photo 4 ]</div>
+        </div>
+        <div class="gallery-item fade-in fade-in-delay-1" data-index="4">
+          <div class="placeholder">[ Gallery Photo 5 ]</div>
+        </div>
+        <div class="gallery-item fade-in fade-in-delay-2" data-index="5">
+          <div class="placeholder">[ Gallery Photo 6 ]</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+    </button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="Gallery image">
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- ==================== TESTIMONIALS ==================== -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>What People <span class="accent-text">Say</span></h2>
+        <div class="accent-line"></div>
+      </div>
+      <!-- [TESTIMONIAL QUOTES] Replace with real quotes -->
+      <div class="testimonials-grid">
+        <div class="testimonial-card fade-in">
+          <div class="quote-icon">&ldquo;</div>
+          <blockquote>[Testimonial quote from a venue owner, event planner, or satisfied client about how the band made their event amazing.]</blockquote>
+          <div class="testimonial-author">
+            <div>
+              <div class="testimonial-author-name">[Author Name]</div>
+              <div class="testimonial-author-title">[Title / Venue Name]</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-in fade-in-delay-1">
+          <div class="quote-icon">&ldquo;</div>
+          <blockquote>[Testimonial quote about the band's energy, crowd interaction, and professionalism.]</blockquote>
+          <div class="testimonial-author">
+            <div>
+              <div class="testimonial-author-name">[Author Name]</div>
+              <div class="testimonial-author-title">[Title / Venue Name]</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-in fade-in-delay-2">
+          <div class="quote-icon">&ldquo;</div>
+          <blockquote>[Testimonial quote about the band's song variety and ability to keep the dance floor packed.]</blockquote>
+          <div class="testimonial-author">
+            <div>
+              <div class="testimonial-author-name">[Author Name]</div>
+              <div class="testimonial-author-title">[Title / Venue Name]</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT / BOOKING ==================== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>Book <span class="accent-text">Us</span></h2>
+        <div class="accent-line"></div>
+        <p>Ready to make your next event unforgettable? Get in touch.</p>
+      </div>
+      <div class="contact-grid">
+        <form class="contact-form fade-in" id="bookingForm" action="https://api.web3forms.com/submit" method="POST">
+          <!-- [WEB3FORMS ACCESS KEY] Replace YOUR_ACCESS_KEY with your real key from https://web3forms.com -->
+          <input type="hidden" name="access_key" value="6ab2d510-40b2-43a2-bc72-bd6bc239fd65">
+          <input type="hidden" name="subject" value="New Booking Inquiry — Three and One Band">
+          <input type="hidden" name="from_name" value="Three and One Website">
+          <!-- Honeypot spam prevention -->
+          <input type="checkbox" name="botcheck" style="display: none;">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Your Name *</label>
+              <input type="text" id="name" name="name" required placeholder="John Smith">
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required placeholder="john@example.com">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+            </div>
+            <div class="form-group">
+              <label for="eventType">Event Type *</label>
+              <select id="eventType" name="event_type" required>
+                <option value="" disabled selected>Select event type</option>
+                <option value="Wedding">Wedding</option>
+                <option value="Corporate Event">Corporate Event</option>
+                <option value="Bar/Restaurant">Bar / Restaurant</option>
+                <option value="Private Party">Private Party</option>
+                <option value="Festival">Festival</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="eventDate">Event Date</label>
+              <input type="date" id="eventDate" name="event_date">
+            </div>
+            <div class="form-group">
+              <label for="venue">Venue / Location</label>
+              <input type="text" id="venue" name="venue" placeholder="Venue name or address">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message">Tell Us About Your Event</label>
+            <textarea id="message" name="message" rows="4" placeholder="Event details, special requests, expected crowd size, etc."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" id="submitBtn">Send Booking Inquiry</button>
+          <div class="form-status" id="formStatus"></div>
+        </form>
+
+        <div class="contact-info fade-in fade-in-delay-1">
+          <div class="contact-info-card">
+            <h3>Get In Touch</h3>
+            <div class="contact-detail">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+              </svg>
+              <a href="mailto:threeandoneband@gmail.com">threeandoneband@gmail.com</a>
+            </div>
+            <div class="contact-detail">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span>Jersey Shore &amp; Philadelphia Area</span>
+            </div>
+          </div>
+          <div class="contact-info-card">
+            <h3>Follow Us</h3>
+            <div class="social-links">
+              <a href="https://www.facebook.com/threeandoneband/" class="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+              </a>
+              <a href="https://www.instagram.com/threeandoneband/" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+              </a>
+              <a href="https://www.youtube.com/@threeandoneband" class="social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.43z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#0197b2"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3><span class="accent-text">Three</span> &amp; One</h3>
+          <p>A 4-piece cover band bringing the best of classic rock, pop, blues, and party anthems to the Jersey Shore and Philadelphia area.</p>
+        </div>
+        <div class="footer-nav">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#members">Band Members</a></li>
+            <li><a href="#media">Music</a></li>
+            <li><a href="#setlist">Setlist</a></li>
+            <li><a href="#shows">Shows</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Book Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p>threeandoneband@gmail.com</p>
+          <p>Jersey Shore &amp; Philadelphia Area</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Three and One Band. All rights reserved.</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/threeandoneband/" class="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/threeandoneband/" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@threeandoneband" class="social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.43z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#0197b2"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
