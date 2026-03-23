@@ -207,6 +207,126 @@
   const today = new Date();
   today.setHours(0, 0, 0, 0);
 
+  // ============================================
+  // SHOWS VIEW TOGGLE (LIST / CALENDAR)
+  // ============================================
+  const showsList = document.querySelector('.shows-list');
+  const calendarView = document.querySelector('.calendar-view');
+  const viewBtns = document.querySelectorAll('.view-btn');
+  const calDays = document.getElementById('calDays');
+  const calMonthLabel = document.getElementById('calMonthLabel');
+  const calDetails = document.getElementById('calDetails');
+  const calPrev = document.getElementById('calPrev');
+  const calNext = document.getElementById('calNext');
+
+  // Collect all show data from cards
+  const showData = [];
+  document.querySelectorAll('.show-card[data-date]').forEach(card => {
+    const venue = card.querySelector('.show-details h3').textContent;
+    const time = card.querySelector('.show-time').textContent.trim();
+    showData.push({ date: card.dataset.date, venue, time });
+  });
+
+  // Determine calendar month range from show data
+  const showMonths = showData.map(s => {
+    const d = new Date(s.date + 'T12:00:00');
+    return { year: d.getFullYear(), month: d.getMonth() };
+  });
+  const minMonth = showMonths.reduce((a, b) => (a.year * 12 + a.month < b.year * 12 + b.month) ? a : b);
+  const maxMonth = showMonths.reduce((a, b) => (a.year * 12 + a.month > b.year * 12 + b.month) ? a : b);
+
+  let calYear = minMonth.year;
+  let calMonth = minMonth.month;
+
+  function renderCalendar() {
+    const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
+      'July', 'August', 'September', 'October', 'November', 'December'];
+    calMonthLabel.textContent = monthNames[calMonth] + ' ' + calYear;
+
+    const firstDay = new Date(calYear, calMonth, 1).getDay();
+    const daysInMonth = new Date(calYear, calMonth + 1, 0).getDate();
+    const todayStr = new Date().toISOString().slice(0, 10);
+
+    calDays.innerHTML = '';
+    calDetails.innerHTML = '';
+
+    // Empty cells before first day
+    for (let i = 0; i < firstDay; i++) {
+      const cell = document.createElement('div');
+      cell.className = 'calendar-cell';
+      calDays.appendChild(cell);
+    }
+
+    // Day cells
+    for (let day = 1; day <= daysInMonth; day++) {
+      const dateStr = calYear + '-' + String(calMonth + 1).padStart(2, '0') + '-' + String(day).padStart(2, '0');
+      const cell = document.createElement('div');
+      cell.className = 'calendar-cell current-month';
+      cell.textContent = day;
+
+      if (dateStr === todayStr) {
+        cell.classList.add('today');
+      }
+
+      const dayShows = showData.filter(s => s.date === dateStr);
+      if (dayShows.length > 0) {
+        cell.classList.add('has-show');
+        cell.addEventListener('click', () => {
+          calDetails.innerHTML = '';
+          dayShows.forEach(show => {
+            const card = document.createElement('div');
+            card.className = 'show-card';
+            card.innerHTML =
+              '<div class="show-date"><div class="show-month">' + monthNames[calMonth].slice(0, 3) + '</div><div class="show-day">' + day + '</div></div>' +
+              '<div class="show-divider"></div>' +
+              '<div class="show-details"><h3>' + show.venue + '</h3><div class="show-time">' + show.time + '</div></div>';
+            calDetails.appendChild(card);
+          });
+          // Scroll details into view
+          calDetails.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+      }
+
+      calDays.appendChild(cell);
+    }
+
+    // Enable/disable nav buttons
+    calPrev.disabled = (calYear === minMonth.year && calMonth === minMonth.month);
+    calNext.disabled = (calYear === maxMonth.year && calMonth === maxMonth.month);
+    calPrev.style.opacity = calPrev.disabled ? '0.3' : '1';
+    calNext.style.opacity = calNext.disabled ? '0.3' : '1';
+  }
+
+  calPrev.addEventListener('click', () => {
+    if (calMonth === 0) { calMonth = 11; calYear--; }
+    else { calMonth--; }
+    renderCalendar();
+  });
+
+  calNext.addEventListener('click', () => {
+    if (calMonth === 11) { calMonth = 0; calYear++; }
+    else { calMonth++; }
+    renderCalendar();
+  });
+
+  viewBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      viewBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      if (btn.dataset.view === 'list') {
+        showsList.style.display = '';
+        calendarView.style.display = 'none';
+      } else {
+        showsList.style.display = 'none';
+        calendarView.style.display = '';
+        renderCalendar();
+      }
+    });
+  });
+
+  // ============================================
+  // HIDE PAST SHOWS + ADD TO GOOGLE CALENDAR
+  // ============================================
   document.querySelectorAll('.show-card[data-date]').forEach(card => {
     try {
       const showDate = new Date(card.dataset.date + 'T23:59:59');
