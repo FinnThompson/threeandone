@@ -20,7 +20,14 @@
   <!-- ==================== NAVIGATION ==================== -->
   <nav class="navbar" id="navbar">
     <div class="container">
-      <a href="#hero" class="nav-logo"><span class="accent-text">Three</span> &amp; One</a>
+      <a href="#hero" class="nav-logo">
+        <div class="nav-vinyl" aria-hidden="true">
+          <div class="nav-vinyl-spin">
+            <img src="images/Logo_DrumstickCropped.jpg" alt="" class="nav-vinyl-img">
+          </div>
+        </div>
+        <span class="accent-text">Three</span> &amp; One
+      </a>
       <ul class="nav-links" id="navLinks">
         <li><a href="#about">About</a></li>
         <li><a href="#members">Band</a></li>
@@ -46,29 +53,6 @@
     <!-- Sun -->
     <div class="hero-deco deco-sun" aria-hidden="true">
       <svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="22" fill="#ffc63b"/><g stroke="#ffc63b" stroke-width="4" stroke-linecap="round"><line x1="50" y1="8" x2="50" y2="20"/><line x1="50" y1="80" x2="50" y2="92"/><line x1="8" y1="50" x2="20" y2="50"/><line x1="80" y1="50" x2="92" y2="50"/><line x1="20" y1="20" x2="29" y2="29"/><line x1="71" y1="71" x2="80" y2="80"/><line x1="80" y1="20" x2="71" y2="29"/><line x1="29" y1="71" x2="20" y2="80"/></g></svg>
-    </div>
-    <!-- Vinyl record -->
-    <div class="hero-deco deco-vinyl" aria-hidden="true">
-      <div class="vinyl-spin">
-        <svg viewBox="0 0 100 100" fill="none">
-          <circle cx="50" cy="50" r="45" fill="#1a1a2e"/>
-          <circle cx="50" cy="50" r="38" stroke="rgba(255,255,255,0.06)" stroke-width="1" fill="none"/>
-          <circle cx="50" cy="50" r="34" stroke="rgba(255,255,255,0.04)" stroke-width="0.5" fill="none"/>
-          <circle cx="50" cy="50" r="30" stroke="rgba(255,255,255,0.06)" stroke-width="1" fill="none"/>
-          <circle cx="50" cy="50" r="26" stroke="rgba(255,255,255,0.04)" stroke-width="0.5" fill="none"/>
-          <circle cx="50" cy="50" r="22" stroke="rgba(255,255,255,0.03)" stroke-width="0.5" fill="none"/>
-          <circle cx="50" cy="50" r="18" fill="#ffc63b"/>
-          <circle cx="50" cy="50" r="5" fill="#1a1a2e"/>
-          <!-- Gleam highlight -->
-          <ellipse cx="35" cy="35" rx="12" ry="4" fill="rgba(255,255,255,0.12)" transform="rotate(-45 35 35)"/>
-        </svg>
-      </div>
-      <!-- Tonearm (stays fixed) -->
-      <svg class="vinyl-needle" viewBox="0 0 50 60" fill="none">
-        <circle cx="40" cy="6" r="5" fill="#ffc63b"/>
-        <line x1="40" y1="10" x2="18" y2="48" stroke="#ffc63b" stroke-width="3" stroke-linecap="round"/>
-        <circle cx="16" cy="50" r="3" fill="#ff65c3"/>
-      </svg>
     </div>
     <!-- Beach umbrella -->
     <div class="hero-deco deco-umbrella" aria-hidden="true">
@@ -186,12 +170,20 @@
       <svg viewBox="0 0 80 80" fill="none"><ellipse cx="15" cy="65" rx="12" ry="9" fill="#ffc63b" transform="rotate(-15 15 65)"/><ellipse cx="55" cy="55" rx="12" ry="9" fill="#ffc63b" transform="rotate(-15 55 55)"/><line x1="26" y1="60" x2="26" y2="12" stroke="#ffc63b" stroke-width="4"/><line x1="66" y1="50" x2="66" y2="8" stroke="#ffc63b" stroke-width="4"/><line x1="26" y1="12" x2="66" y2="8" stroke="#ffc63b" stroke-width="4"/></svg>
     </div>
 
+    <!-- Spinning logo vinyl behind title -->
+    <div class="hero-logo-vinyl" aria-hidden="true">
+      <div class="logo-vinyl-spin">
+        <img src="images/Logo_DrumstickCropped.jpg" alt="" class="logo-vinyl-img">
+      </div>
+      <!-- Tonearm (stays fixed while disc spins) -->
+      <svg class="logo-vinyl-needle" viewBox="0 0 80 120" fill="none">
+        <circle cx="65" cy="10" r="8" fill="#ffc63b"/>
+        <line x1="65" y1="17" x2="30" y2="95" stroke="#ffc63b" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="28" cy="99" r="4" fill="#ff65c3"/>
+      </svg>
+    </div>
     <div class="hero-content">
       <h1 class="fade-in"><span class="accent-text">Three</span> &amp; One</h1>
-      <p class="tagline fade-in fade-in-delay-1">
-        <!-- [TAGLINE] Replace with your band's tagline -->
-        Four musicians. One unforgettable night. Classic rock to today's hits — live from the Jersey Shore.
-      </p>
       <div class="hero-cta fade-in fade-in-delay-2">
         <a href="#contact" class="btn btn-primary">Book Us For Your Event</a>
         <a href="#media" class="btn btn-outline">Hear Us Play</a>
