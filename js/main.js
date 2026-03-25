@@ -138,8 +138,13 @@
       div.className = 'gallery-item';
       div.dataset.index = galleryImages.length - 1;
       const img = document.createElement('img');
-      img.src = src;
+      img.decoding = 'async';
       img.alt = 'Three and One live photo';
+      img.onerror = function() {
+        const self = this;
+        setTimeout(() => { self.src = src; }, 500 + Math.random() * 1000);
+      };
+      img.src = src;
       div.appendChild(img);
       ribbonTrack.appendChild(div);
     });
