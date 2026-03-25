@@ -1301,11 +1301,7 @@ section {
   display: flex;
   gap: 1rem;
   width: max-content;
-  animation: ribbon-scroll var(--ribbon-duration, 60s) linear infinite;
-}
-
-.gallery-ribbon-track:hover {
-  animation-play-state: paused;
+  will-change: transform;
 }
 
 .gallery-item {
@@ -1342,10 +1338,6 @@ section {
   background: rgba(0, 0, 0, 0.2);
 }
 
-@keyframes ribbon-scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
 
 /* Lightbox */
 .lightbox {
