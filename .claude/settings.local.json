@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Bash(open:*)"
+      "Bash(open:*)",
+      "Bash(sips:*)",
+      "Bash(ls:*)",
+      "Bash(xargs -I{} basename \"{}\")"
     ]
   }
 }

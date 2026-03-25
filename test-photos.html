@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>Photo Test</title>
+<style>body{background:#111;color:#fff;font-family:sans-serif;padding:1rem}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem}.item{text-align:center}.item img{width:100%;border-radius:8px}.item p{margin:0.5rem 0;font-size:0.8rem;opacity:0.7}</style>
+</head><body>
+<h1>All Gallery Photos — find the glitchy one(s)</h1>
+<div class="grid" id="grid"></div>
+<script>
+const photos = [
+  '20191207_194402.jpg','20191207_194446.jpg','240622-LOWCLOUD-1053.jpg','240622-LOWCLOUD-1055.jpg',
+  '240622-LOWCLOUD-1056.jpg','240622-LOWCLOUD-1057.jpg','240622-LOWCLOUD-1067.jpg','240622-LOWCLOUD-1075.jpg',
+  '240622-LOWCLOUD-1081.jpg','240622-LOWCLOUD-1083.jpg','240622-LOWCLOUD-1084.jpg','240622-LOWCLOUD-1085.jpg',
+  '240622-LOWCLOUD-1091.jpg','240622-lowcloud-1086.JPG','DJI_0426.jpeg','DJI_0442.JPEG',
+  'IMG_2581.jpeg','IMG_3430.JPG','IMG_4853.JPG','IMG_5378.JPG','IMG_5962.jpeg','IMG_6409.JPG',
+  'Image-14.JPEG','Image-24.JPEG','Image-30.JPEG','_DSF9854.JPG',
+  'IMG_3069.jpg','IMG_3399.jpg','IMG_3454.jpg','IMG_3534.jpg','IMG_5447.jpg','IMG_5494.jpg',
+  'IMG_5625.jpg','IMG_5892.jpg','IMG_6824.jpg','IMG_7436.jpg','IMG_7452.jpg','IMG_8355.jpg'
+];
+const grid = document.getElementById('grid');
+photos.forEach((f,i) => {
+  const div = document.createElement('div');
+  div.className = 'item';
+  div.innerHTML = `<img src="images/PhotoGallery/${f}" alt="${f}"><p>#${i+1} — ${f}</p>`;
+  grid.appendChild(div);
+});
+</script>
+</body></html>

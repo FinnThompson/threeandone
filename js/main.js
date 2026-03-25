@@ -81,25 +81,84 @@
   }
 
   // ============================================
-  // GALLERY LIGHTBOX
+  // GALLERY RIBBON + LIGHTBOX
   // ============================================
+  const galleryPhotos = [
+    '20191207_194402.jpg',
+    '20191207_194446.jpg',
+    '240622-LOWCLOUD-1053.jpg',
+    '240622-LOWCLOUD-1055.jpg',
+    '240622-LOWCLOUD-1056.jpg',
+    '240622-LOWCLOUD-1057.jpg',
+    '240622-LOWCLOUD-1067.jpg',
+    '240622-LOWCLOUD-1075.jpg',
+    '240622-LOWCLOUD-1081.jpg',
+    '240622-LOWCLOUD-1084.jpg',
+    '240622-LOWCLOUD-1085.jpg',
+    '240622-LOWCLOUD-1091.jpg',
+    '240622-lowcloud-1086.JPG',
+    'DJI_0426.jpeg',
+    'DJI_0442.JPEG',
+    'IMG_3430.JPG',
+    'IMG_4853.JPG',
+    'IMG_5378.JPG',
+    'IMG_5962.jpeg',
+    'IMG_6409.JPG',
+    'Image-14.JPEG',
+    '_DSF9854.JPG',
+    'IMG_3069.jpg',
+    'IMG_3399.jpg',
+    'IMG_3454.jpg',
+    'IMG_3534.jpg',
+    'IMG_5447.jpg',
+    'IMG_5494.jpg',
+    'IMG_5625.jpg',
+    'IMG_5892.jpg',
+    'IMG_6824.jpg',
+    'IMG_7436.jpg',
+    'IMG_7452.jpg',
+    'IMG_8355.jpg'
+  ];
+
+  // Shuffle photos (Fisher-Yates)
+  for (let i = galleryPhotos.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [galleryPhotos[i], galleryPhotos[j]] = [galleryPhotos[j], galleryPhotos[i]];
+  }
+
+  const ribbonTrack = document.getElementById('galleryRibbonTrack');
+  const galleryImages = [];
+
+  // Build ribbon items — duplicate the set for seamless looping
+  const buildItems = (photos) => {
+    photos.forEach((file, i) => {
+      const src = 'images/PhotoGallery/' + file;
+      galleryImages.push({ src, alt: 'Three and One live photo' });
+      const div = document.createElement('div');
+      div.className = 'gallery-item';
+      div.dataset.index = galleryImages.length - 1;
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = 'Three and One live photo';
+      div.appendChild(img);
+      ribbonTrack.appendChild(div);
+    });
+  };
+
+  buildItems(galleryPhotos);
+  buildItems(galleryPhotos); // duplicate for seamless loop
+
+  // Scale animation duration based on number of photos
+  const duration = galleryPhotos.length * 3;
+  ribbonTrack.parentElement.style.setProperty('--ribbon-duration', duration + 's');
+
+  // Lightbox
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightboxImg');
   const lightboxClose = document.getElementById('lightboxClose');
   const lightboxPrev = document.getElementById('lightboxPrev');
   const lightboxNext = document.getElementById('lightboxNext');
-  const galleryItems = document.querySelectorAll('.gallery-item');
-
   let currentIndex = 0;
-  const galleryImages = [];
-
-  // Collect gallery images (only items that have actual <img> elements)
-  galleryItems.forEach((item, index) => {
-    const img = item.querySelector('img');
-    if (img) {
-      galleryImages.push({ src: img.src, alt: img.alt, index });
-    }
-  });
 
   const openLightbox = (index) => {
     if (galleryImages.length === 0) return;
@@ -108,11 +167,13 @@
     lightboxImg.alt = galleryImages[currentIndex].alt;
     lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
+    ribbonTrack.style.animationPlayState = 'paused';
   };
 
   const closeLightbox = () => {
     lightbox.classList.remove('active');
     document.body.style.overflow = '';
+    ribbonTrack.style.animationPlayState = '';
   };
 
   const prevImage = () => {
@@ -127,26 +188,21 @@
     lightboxImg.alt = galleryImages[currentIndex].alt;
   };
 
-  // Attach click to gallery items that have images
-  galleryItems.forEach(item => {
-    item.addEventListener('click', () => {
-      const img = item.querySelector('img');
-      if (!img) return;
-      const imgIndex = galleryImages.findIndex(g => g.src === img.src);
-      if (imgIndex !== -1) openLightbox(imgIndex);
-    });
+  ribbonTrack.addEventListener('click', (e) => {
+    const item = e.target.closest('.gallery-item');
+    if (!item) return;
+    const idx = parseInt(item.dataset.index, 10);
+    if (!isNaN(idx)) openLightbox(idx);
   });
 
   lightboxClose.addEventListener('click', closeLightbox);
   lightboxPrev.addEventListener('click', prevImage);
   lightboxNext.addEventListener('click', nextImage);
 
-  // Close on backdrop click
   lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox) closeLightbox();
   });
 
-  // Keyboard navigation
   document.addEventListener('keydown', (e) => {
     if (!lightbox.classList.contains('active')) return;
     if (e.key === 'Escape') closeLightbox();
@@ -287,6 +343,15 @@
         });
       }
 
+      calDays.appendChild(cell);
+    }
+
+    // Pad to 42 cells (6 rows) so the grid never changes size
+    const totalCells = firstDay + daysInMonth;
+    const remaining = 42 - totalCells;
+    for (let i = 0; i < remaining; i++) {
+      const cell = document.createElement('div');
+      cell.className = 'calendar-cell';
       calDays.appendChild(cell);
     }
 
