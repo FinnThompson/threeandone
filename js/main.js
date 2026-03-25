@@ -105,7 +105,7 @@
     'IMG_5962.jpeg',
     'IMG_6409.JPG',
     'Image-14.JPEG',
-    '_DSF9854.JPG',
+    'DSF9854.JPG',
     'IMG_3069.jpg',
     'IMG_3399.jpg',
     'IMG_3454.jpg',
@@ -140,9 +140,14 @@
       const img = document.createElement('img');
       img.decoding = 'async';
       img.alt = 'Three and One live photo';
+      img.dataset.retries = '0';
       img.onerror = function() {
-        const self = this;
-        setTimeout(() => { self.src = src; }, 500 + Math.random() * 1000);
+        const retries = parseInt(this.dataset.retries, 10);
+        if (retries < 3) {
+          this.dataset.retries = retries + 1;
+          const self = this;
+          setTimeout(() => { self.src = src; }, 500 + Math.random() * 1000);
+        }
       };
       img.src = src;
       div.appendChild(img);
