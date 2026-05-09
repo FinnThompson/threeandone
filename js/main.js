@@ -161,7 +161,7 @@
   // JS-driven scroll using requestAnimationFrame
   let ribbonOffset = 0;
   let ribbonPaused = false;
-  const ribbonSpeed = 0.5; // pixels per frame
+  const ribbonSpeed = 0.9; // pixels per frame
 
   function getHalfWidth() {
     return ribbonTrack.scrollWidth / 2;
