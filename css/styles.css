@@ -1879,6 +1879,13 @@ section {
     font-size: clamp(2rem, 8vw, 3.5rem);
   }
 
+  .hero-cta .btn {
+    width: min(260px, 80vw);
+    padding: 0.75rem 1rem;
+    white-space: nowrap;
+    justify-content: center;
+  }
+
   .lightbox-nav {
     width: 40px;
     height: 40px;
