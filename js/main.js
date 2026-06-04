@@ -314,6 +314,25 @@
     showData.push({ date: card.dataset.date, venue, time });
   });
 
+  function shortVenue(venue) {
+    if (venue.indexOf('Lazy Bass') !== -1) return 'Lazy Bass';
+    if (venue.indexOf("Gully") !== -1) return "Gully's";
+    if (venue.indexOf('Lost Buoy') !== -1) return 'Lost Buoy';
+    if (venue.indexOf('Horsham') !== -1) return 'Horsham';
+    if (venue.indexOf('Tower') !== -1) return 'Tower';
+    return venue.split(/[—-]/)[0].trim();
+  }
+
+  function shortTime(time) {
+    if (!time || time === 'TBD') return '';
+    const m = time.match(/(\d+)(?::\d+)?\s*(AM|PM)\s*[—–-]\s*(\d+)(?::\d+)?\s*(AM|PM)/i);
+    if (!m) return time;
+    const start = m[1], startAp = m[2].toUpperCase();
+    const end = m[3], endAp = m[4].toUpperCase();
+    if (startAp === endAp) return start + '–' + end + endAp;
+    return start + startAp + '–' + end + endAp;
+  }
+
   // Determine calendar month range from show data
   const showMonths = showData.map(s => {
     const d = new Date(s.date + 'T12:00:00');
@@ -322,8 +341,14 @@
   const minMonth = showMonths.reduce((a, b) => (a.year * 12 + a.month < b.year * 12 + b.month) ? a : b);
   const maxMonth = showMonths.reduce((a, b) => (a.year * 12 + a.month > b.year * 12 + b.month) ? a : b);
 
-  let calYear = minMonth.year;
-  let calMonth = minMonth.month;
+  const _now = new Date();
+  let calYear = _now.getFullYear();
+  let calMonth = _now.getMonth();
+  const _minYM = minMonth.year * 12 + minMonth.month;
+  const _maxYM = maxMonth.year * 12 + maxMonth.month;
+  const _nowYM = calYear * 12 + calMonth;
+  if (_nowYM < _minYM) { calYear = minMonth.year; calMonth = minMonth.month; }
+  else if (_nowYM > _maxYM) { calYear = maxMonth.year; calMonth = maxMonth.month; }
 
   function renderCalendar() {
     const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
@@ -349,7 +374,11 @@
       const dateStr = calYear + '-' + String(calMonth + 1).padStart(2, '0') + '-' + String(day).padStart(2, '0');
       const cell = document.createElement('div');
       cell.className = 'calendar-cell current-month';
-      cell.textContent = day;
+
+      const dayNum = document.createElement('div');
+      dayNum.className = 'calendar-cell-day';
+      dayNum.textContent = day;
+      cell.appendChild(dayNum);
 
       if (dateStr === todayStr) {
         cell.classList.add('today');
@@ -358,6 +387,19 @@
       const dayShows = showData.filter(s => s.date === dateStr);
       if (dayShows.length > 0) {
         cell.classList.add('has-show');
+        dayShows.forEach(show => {
+          const meta = document.createElement('div');
+          meta.className = 'calendar-cell-meta';
+          const venueEl = document.createElement('div');
+          venueEl.className = 'calendar-cell-venue';
+          venueEl.textContent = shortVenue(show.venue);
+          const timeEl = document.createElement('div');
+          timeEl.className = 'calendar-cell-time';
+          timeEl.textContent = shortTime(show.time);
+          meta.appendChild(venueEl);
+          meta.appendChild(timeEl);
+          cell.appendChild(meta);
+        });
         cell.addEventListener('click', () => {
           calDetails.innerHTML = '';
           dayShows.forEach(show => {

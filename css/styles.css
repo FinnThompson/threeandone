@@ -730,7 +730,7 @@ section {
    ABOUT
    ============================================ */
 .about {
-  background: var(--bg-secondary);
+  background: var(--bg-primary);
 }
 
 .about-grid {
@@ -802,6 +802,10 @@ section {
 /* ============================================
    BAND MEMBERS
    ============================================ */
+.members {
+  background: var(--bg-secondary);
+}
+
 .members-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -886,7 +890,7 @@ section {
    MUSIC / MEDIA
    ============================================ */
 .media {
-  background: var(--bg-secondary);
+  background: var(--bg-primary);
 }
 
 .media-grid {
@@ -987,6 +991,10 @@ section {
 /* ============================================
    SETLIST
    ============================================ */
+.setlist {
+  background: var(--bg-secondary);
+}
+
 .setlist-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -1252,12 +1260,21 @@ section {
 .calendar-cell {
   aspect-ratio: 1;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  padding: 0.35rem;
   border-radius: var(--radius);
   font-size: 0.9rem;
   color: var(--text-muted);
   position: relative;
+  overflow: hidden;
+}
+
+.calendar-cell-day {
+  text-align: right;
+  font-size: 0.85rem;
+  line-height: 1;
 }
 
 .calendar-cell.current-month {
@@ -1278,14 +1295,53 @@ section {
   transform: scale(1.05);
 }
 
-.calendar-cell.has-show::after {
-  content: '';
-  position: absolute;
-  bottom: 4px;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
+.calendar-cell-meta {
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.calendar-cell-venue {
+  font-size: clamp(0.75rem, 1.1vw, 0.95rem);
+  font-weight: 700;
   background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.calendar-cell-time {
+  font-size: clamp(0.7rem, 1vw, 0.85rem);
+  font-weight: 500;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 600px) {
+  .calendar-cell {
+    padding: 0.2rem;
+  }
+  .calendar-cell-venue,
+  .calendar-cell-time {
+    display: none;
+  }
+  .calendar-cell.has-show::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent-gradient);
+  }
 }
 
 .calendar-cell.today {
