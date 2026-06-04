@@ -4,7 +4,21 @@
       "Bash(open:*)",
       "Bash(sips:*)",
       "Bash(ls:*)",
-      "Bash(xargs -I{} basename \"{}\")"
+      "Bash(xargs -I{} basename \"{}\")",
+      "Bash(npx --version)",
+      "Bash(python3 -c \"import playwright; print\\('py-playwright'\\)\")",
+      "Read(//Applications/**)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://192.168.86.21:8000)",
+      "Read(//Users/finnthompson/Library/Caches/**)",
+      "Bash(timeout 5 npx playwright --version)",
+      "Bash(npx playwright *)",
+      "Bash(echo \"exit:$?\")",
+      "Bash(python3 -c \"import playwright\")",
+      "Bash(python3 -c \"import selenium\")",
+      "Bash(/Applications/Firefox.app/Contents/MacOS/firefox --version)",
+      "Bash(/Applications/Firefox.app/Contents/MacOS/firefox --headless --window-size=390,500 --screenshot __TRACKED_VAR__/_cal_test.png file://__TRACKED_VAR__/_cal_test.html)",
+      "Bash(/Applications/Firefox.app/Contents/MacOS/firefox --headless --window-size=450,520 --screenshot __TRACKED_VAR__/_cal_test.png file://__TRACKED_VAR__/_cal_test.html)",
+      "Bash(/Applications/Firefox.app/Contents/MacOS/firefox --headless --window-size=450,360 --screenshot __TRACKED_VAR__/_cal_test.png file://__TRACKED_VAR__/_cal_test.html)"
     ]
   }
 }

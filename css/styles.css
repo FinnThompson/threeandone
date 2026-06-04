@@ -1324,23 +1324,36 @@ section {
 }
 
 @media (max-width: 600px) {
+  /* Let cells grow tall enough to fit readable text instead of squashing
+     into a 1:1 square. Days with shows can be taller than empty days. */
+  .calendar-days {
+    grid-template-rows: none;
+    grid-auto-rows: minmax(40px, auto);
+  }
   .calendar-cell {
-    padding: 0.2rem;
+    aspect-ratio: auto;
+    min-height: 40px;
+    padding: 0.25rem;
   }
-  .calendar-cell-venue,
+  .calendar-cell-meta {
+    margin-top: 0.15rem;
+  }
+  /* Show the venue/time as small wrapping text rather than a single
+     truncated line that collapses to nothing on narrow cells. */
+  .calendar-cell-venue {
+    font-size: 0.6rem;
+    line-height: 1.1;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    word-break: break-word;
+  }
   .calendar-cell-time {
-    display: none;
-  }
-  .calendar-cell.has-show::after {
-    content: '';
-    position: absolute;
-    bottom: 4px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--accent-gradient);
+    font-size: 0.55rem;
+    line-height: 1.1;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
   }
 }
 
