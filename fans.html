@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fan Photos | Three and One Band</title>
+  <meta name="description" content="Photos with the fans who show up, sing along, and make every Three and One show worth playing, across the Jersey Shore and Philadelphia area.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="page-body">
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container">
+      <a href="index.html#hero" class="nav-logo">
+        <div class="nav-vinyl" aria-hidden="true">
+          <div class="nav-vinyl-spin">
+            <img src="images/Logo_DrumstickCropped.jpg" alt="" class="nav-vinyl-img">
+          </div>
+        </div>
+        <span class="accent-text">Three</span> &amp; One
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#shows">Shows</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#members">Band</a></li>
+        <li><a href="index.html#media">Music</a></li>
+        <li><a href="index.html#setlist">Setlist</a></li>
+        <li><a href="index.html#gallery">Gallery</a></li>
+        <li><a href="fans.html" class="btn btn-outline nav-fans-btn active" style="padding: 0.5rem 1.25rem; font-size: 0.85rem;">Fan Photos</a></li>
+        <li><a href="index.html#contact" class="btn btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.85rem;">Book Us</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ==================== FAN PHOTOS ==================== -->
+  <section class="fans-header" id="fans">
+    <div class="container">
+      <a href="index.html" class="fans-back">
+        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Back to the site
+      </a>
+      <div class="section-header fade-in">
+        <h1>With The <span class="accent-text">Fans</span></h1>
+        <div class="accent-line"></div>
+        <p>The best part of every gig. Thanks for singing along, sticking around, and putting up with us.</p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="fan-mosaic" id="fanMosaic">
+        <!-- Tiles injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+    </button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="">
+    <video class="lightbox-video" id="lightboxVideo" loop muted playsinline controls style="display: none;"></video>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-newsletter">
+        <div class="newsletter-card">
+          <h3>Join The Mailing List</h3>
+          <p>Show dates, merch, and band news for our fans.</p>
+          <form class="newsletter-form" action="https://app.kit.com/forms/9953858/subscriptions" method="post">
+            <div class="newsletter-fields">
+              <input type="email" class="newsletter-input" id="nlEmailFooter" name="email_address"
+                     required placeholder="you@example.com" autocomplete="email" aria-label="Email address">
+              <button type="submit" class="btn btn-primary">Sign Up</button>
+            </div>
+            <div class="form-status"></div>
+            <!-- Kit's free plan asks for this attribution link. Delete this <p> to remove it. -->
+            <p class="newsletter-fineprint">
+              No spam, unsubscribe any time.
+              <a href="https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic"
+                 target="_blank" rel="nofollow noopener">Built with Kit</a>
+            </p>
+          </form>
+        </div>
+      </div>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3><span class="accent-text">Three</span> &amp; One</h3>
+          <p>A 4-piece cover band bringing the best of classic rock, pop, blues, and party anthems to the Jersey Shore and Philadelphia area.</p>
+        </div>
+        <div class="footer-nav">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#members">Band Members</a></li>
+            <li><a href="index.html#media">Music</a></li>
+            <li><a href="index.html#setlist">Setlist</a></li>
+            <li><a href="index.html#shows">Shows</a></li>
+            <li><a href="index.html#gallery">Gallery</a></li>
+            <li><a href="fans.html">Fan Photos</a></li>
+            <li><a href="index.html#contact">Book Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p>threeandoneband@gmail.com</p>
+          <p>Jersey Shore &amp; Philadelphia Area</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Three and One Band. All rights reserved.</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/threeandoneband/" class="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/threeandoneband/" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@threeandoneband" class="social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.43z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#0197b2"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/fans.js"></script>
+  <script src="js/newsletter.js"></script>
+</body>
+</html>
