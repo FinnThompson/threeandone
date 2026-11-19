@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Website for **Three and One**, a 4-piece cover band based in the Jersey Shore & Philadelphia area. This is a static, single-page site with no build tools, bundler, or framework — just plain HTML, CSS, and vanilla JS.
+Website for **Three and One**, a 4-piece party band based in the Jersey Shore & Philadelphia area. This is a static, single-page site with no build tools, bundler, or framework — just plain HTML, CSS, and vanilla JS.
 
 ## Development
 
